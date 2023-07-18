@@ -11,7 +11,7 @@ class ProductDetail extends Model
 
     protected $table = 'product_details';
     protected $primaryKey = 'id';
-    protected $guared = [];
+    protected $guarded = [];
     public function products(){
         return $this->belongsTo(Product::class,'product_id','id');
     }

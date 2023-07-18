@@ -11,7 +11,7 @@ class Order extends Model
 
     protected $table = 'orders';
     protected $primaryKey = 'id';
-    protected $guared = [];
+    protected $guarded = [];
 
     //order -> orderDetail
     public function orderDetails()

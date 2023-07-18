@@ -10,7 +10,7 @@ class BlogComment extends Model
     use HasFactory;
     protected $table = 'blog_comments';
     protected $primaryKey = 'id';
-    protected $guared = [];
+    protected $guarded = [];
         //blogComment -> blog
     public function blog() {
         return $this->belongsTo(Blog::class,'blog_id','id');

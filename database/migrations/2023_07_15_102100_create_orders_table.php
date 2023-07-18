@@ -20,8 +20,11 @@ return new class extends Migration
             $table->string('country');
             $table->string('street_address');
             $table->string('postcode_zip');
+            $table->string('town_city');
             $table->string('email');
             $table->string('phone');
+            $table->string('payment_type');
+
 
             $table->timestamps();
         });

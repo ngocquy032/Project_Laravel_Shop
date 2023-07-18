@@ -10,7 +10,7 @@ class Blog extends Model
     use HasFactory;
     protected $table = 'blogs';
     protected $primaryKey = 'id';
-    protected $guared = [];
+    protected $guarded = [];
         //blog -> blogComment
     public function blogComments() {
         return $this->hasMany(BlogComment::class,'blog_id','id');

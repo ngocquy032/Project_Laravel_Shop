@@ -10,7 +10,7 @@ class Brand extends Model
     use HasFactory;
     protected $table = 'brands';
     protected $primaryKey = 'id';
-    protected $guared = [];
+    protected $guarded = [];
         //định nghĩa mqh tới products
         public function products(){
             return $this->hasMany(Product::class,'brand_id','id');
