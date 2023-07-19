@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'Ngocquy2414@gmail.com',
                 'password' => Hash::make('241403'),
                 'avatar' => null,
-                'level' => 0,
+                'level' => 2,
                 'description' => null,
             ],
             [

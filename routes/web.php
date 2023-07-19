@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\AccountController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckOutController;
 use App\Http\Controllers\Front\HomeController;
@@ -50,7 +51,12 @@ Route::prefix('checkout')->group(function(){
     Route::get('/vnPayCheck',[CheckOutController::class, 'vnPayCheck']);
     Route::get('/result',[CheckOutController::class, 'result']);
 
+});
 
+
+Route::prefix('account')->group(function(){
+    Route::get('login', [AccountController::class, 'login']);
+    Route::post('login', [AccountController::class, 'checkLogin']);
 
 
 });
