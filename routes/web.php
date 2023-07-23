@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Front\AccountController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckOutController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ShopController;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 //     return $productService->find(1);
 // });
 
+
+//Front Client
 
 
 //trang index
@@ -71,7 +75,7 @@ Route::prefix('account')->group(function(){
 
    Route::post('register', [AccountController::class, 'postRegister']);
 
-   Route::prefix('my-order')->group(function(){
+   Route::prefix('my-order')->middleware('CheckMemberLogin')->group(function(){
         Route::get('/', [AccountController::class, 'myOrderIndex']);
         Route::get('{id}', [AccountController::class, 'myOrderShow']);
 
@@ -79,4 +83,16 @@ Route::prefix('account')->group(function(){
 
 
 });
+
+
+
+// Dashboard (Admin)
+Route::prefix('admin')->group(function(){
+    Route::resource('user',UserController::class);
+
+
+
+});
+
+
 
