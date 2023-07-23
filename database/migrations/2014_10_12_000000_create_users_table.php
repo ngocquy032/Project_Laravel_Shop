@@ -24,6 +24,17 @@ return new class extends Migration
             $table->string('avatar')->nullable();
             $table->tinyInteger('level');
             $table->text('description')->nullable();
+
+            $table->string('company_name')->nullable();
+            $table->string('country')->nullable();
+            $table->string('street_address')->nullable();
+            $table->string('postcode_zip')->nullable();
+            $table->string('town_city')->nullable();
+            $table->string('phone')->nullable();
+
+
+
+
         });
     }
 

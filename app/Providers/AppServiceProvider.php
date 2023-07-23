@@ -2,6 +2,14 @@
 
 namespace App\Providers;
 
+use App\Repositories\Product\ProductRepository;
+use App\Repositories\Product\ProductRepositoryInterface;
+use App\Repositories\User\UserRepository;
+use App\Repositories\User\UserRepositoryInterface;
+use App\Services\Product\ProductService;
+use App\Services\Product\ProductServiceInterface;
+use App\Services\User\UserService;
+use App\Services\User\UserServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -9,9 +17,88 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Register any application services.
      */
-    public function register(): void
+    public function register()
     {
-        //
+
+        //Product
+        $this->app->singleton(
+            ProductRepositoryInterface::class,
+            ProductRepository::class
+        );
+        $this->app->singleton(
+            ProductServiceInterface::class,
+            ProductService::class
+        );
+
+
+        //Brand
+        $this->app->singleton(
+            BrandRepositoryInterface::class,
+            BrandRepository::class
+        );
+        $this->app->singleton(
+            BrandServiceInterface::class,
+            BrandService::class
+        );
+
+        //ProductCatetory
+        $this->app->singleton(
+            ProductCategoryRepositoryInterface::class,
+            ProductCategoryRepository::class
+        );
+        $this->app->singleton(
+            ProductCategoryServiceInterface::class,
+            ProductCategoryService::class
+        );
+        //ProductComment
+        $this->app->singleton(
+            ProductCommentRepositoryInterface::class,
+            ProductCommentRepository::class
+        );
+        $this->app->singleton(
+            ProductCommentServiceInterface::class,
+            ProductCommentService::class
+        );
+
+        //Blog
+        $this->app->singleton(
+            BlogRepositoryInterface::class,
+            BlogRepository::class
+        );
+        $this->app->singleton(
+            BlogServiceInterface::class,
+            BlogService::class
+        );
+
+        //Order
+        $this->app->singleton(
+            OrderRepositoryInterface::class,
+            OrderRepository::class
+        );
+        $this->app->singleton(
+            OrderServiceInterface::class,
+            OrderService::class
+        );
+
+        //OrderDetails
+        $this->app->singleton(
+            OrderDetailRepositoryInterface::class,
+            OrderDetailRepository::class
+        );
+        $this->app->singleton(
+            OrderDetailServiceInterface::class,
+            OrderDetailService::class
+        );
+
+        //User
+        $this->app->singleton(
+            UserRepositoryInterface::class,
+            UserRepository::class
+        );
+        $this->app->singleton(
+            UserServiceInterface::class,
+            UserService::class
+        );
     }
 
     /**
