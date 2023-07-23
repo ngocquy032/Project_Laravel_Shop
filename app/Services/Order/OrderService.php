@@ -7,15 +7,18 @@ use App\Services\BaseService;
 
 class OrderService extends BaseService implements OrderServiceInterface
 {
-    public $reponsitory;
-    public function __construct(OrderRepositoryInterface $orderReponsitory)
+    public $repository;
+    public function __construct(OrderRepositoryInterface $orderRepository)
     {
-        $this->reponsitory = $orderReponsitory;
+        $this->repository = $orderRepository;
     }
 
 
     public function getOrderByUserId($userId)
     {
-        return $this->reponsitory->getOrderByUserId($userId);
+        return $this->repository->getOrderByUserId($userId);
     }
+
+
+
 }

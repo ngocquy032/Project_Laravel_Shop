@@ -208,6 +208,7 @@
                         <li><a href="">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="./account/my-order">My Order</a></li>
+                                <li><a href="./blog-details.html">Blog Details</a></li>
                                 <li><a href="shopping-cart.html">Shopping Cart</a></li>
                                 <li><a href="check-out.html">Checkout</a></li>
                                 <li><a href="faq.html">Faq</a></li>

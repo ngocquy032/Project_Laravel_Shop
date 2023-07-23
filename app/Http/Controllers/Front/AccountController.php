@@ -17,6 +17,7 @@ class AccountController extends Controller
     {
         $this->userService = $userService;
         $this->orderService = $orderService;
+
     }
 
     //
@@ -64,10 +65,15 @@ class AccountController extends Controller
     }
 
     public function myOrderIndex(){
-        $orders = $this->orderService->getOrderByUserId(Auth:: id());
-
+        $orders = $this->orderService->getOrderByUserId(Auth::id());
 
         return view('front.account.my-order.index', compact('orders'));
+    }
+
+    public function myOrderShow($id){
+        $order = $this-> orderService->find($id);
+
+        return view('front.account.my-order.show', compact('order'));
     }
 
 }
