@@ -4,7 +4,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Front\AccountController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckOutController;
-use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Front\ShopController;
 
 
@@ -88,8 +88,14 @@ Route::prefix('account')->group(function(){
 
 // Dashboard (Admin)
 Route::prefix('admin')->group(function(){
+    Route::redirect('', 'admin/user');
     Route::resource('user',UserController::class);
+    Route::get('create',[UserController::class,'create']);
 
+    Route::prefix('login')->group(function(){
+        Route::get('', [HomeController::class, 'getLogin']);
+        Route::post('', [HomeController::class, 'postLogin']);
+    });
 
 
 });
