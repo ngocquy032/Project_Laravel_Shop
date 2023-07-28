@@ -1,13 +1,15 @@
 <?php
 
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Front\AccountController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckOutController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\ProductCategoryController;
+use App\Http\Controllers\Front\HomeController as FrontHomeController;
 use App\Http\Controllers\Front\ShopController;
-
-
+use App\Models\ProductCategory;
 use Illuminate\Support\Facades\Route;
 
 
@@ -27,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //trang index
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [FrontHomeController::class, 'index']);
 
 
 
@@ -87,16 +89,23 @@ Route::prefix('account')->group(function(){
 
 
 // Dashboard (Admin)
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')->middleware('CheckAdminLogin')->group(function(){
     Route::redirect('', 'admin/user');
     Route::resource('user',UserController::class);
+
     Route::get('create',[UserController::class,'create']);
+    Route::resource('category', ProductCategoryController::class);
+    Route::resource('brand', BrandController::class);
+
+
+
 
     Route::prefix('login')->group(function(){
-        Route::get('', [HomeController::class, 'getLogin']);
-        Route::post('', [HomeController::class, 'postLogin']);
+        Route::get('', [HomeController::class, 'getLogin'])->withoutMiddleware('CheckAdminLogin');
+        Route::post('', [HomeController::class, 'postLogin'])->withoutMiddleware('CheckAdminLogin');
     });
 
+    Route::get('logout', [HomeController::class, 'logout']);
 
 });
 

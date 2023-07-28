@@ -8,11 +8,11 @@ use App\Services\BaseService;
 class BrandService extends BaseService implements BrandServiceInterface
 
 {
-    public $reponsitory;
+    public $repository;
 
-    public function __construct(BrandRepositoryInterface $brandReponsitory)
+    public function __construct(BrandRepositoryInterface $brandRepository)
     {
-        $this->reponsitory = $brandReponsitory;
+        $this->repository = $brandRepository;
     }
 
 }

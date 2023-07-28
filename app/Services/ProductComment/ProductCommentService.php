@@ -9,10 +9,10 @@ use App\Services\BaseService;
 class ProductCommentService extends BaseService implements ProductCommentServiceInterface
 {
 
-    public $reponsitory;
+    public $repository;
 
-    public function __construct(ProductCategoryRepositoryInterface $productCommentReponsitory)
+    public function __construct(ProductCategoryRepositoryInterface $productCommentRepository)
     {
-        $this->reponsitory = $productCommentReponsitory;
+        $this->repository = $productCommentRepository;
     }
 }

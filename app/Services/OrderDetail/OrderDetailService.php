@@ -7,9 +7,9 @@ use App\Services\BaseService;
 
 class OrderDetailService extends BaseService implements OrderDetailServiceInterface
 {
-    public $reponsitory;
-    public function __construct(OrderRepositoryInterface $orderReponsitory)
+    public $repository;
+    public function __construct(OrderRepositoryInterface $orderRepository)
     {
-        $this->reponsitory = $orderReponsitory;
+        $this->repository = $orderRepository;
     }
 }

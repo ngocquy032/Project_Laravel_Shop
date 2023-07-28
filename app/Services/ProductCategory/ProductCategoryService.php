@@ -7,11 +7,11 @@ use App\Services\BaseService;
 
 class ProductCategoryService extends BaseService implements ProductCategoryServiceInterface
 {
-    public $reponsitory;
+    public $repository;
 
-    public function __construct(ProductCategoryRepositoryInterface $productCategoryReponsitory)
+    public function __construct(ProductCategoryRepositoryInterface $productCategoryRepository)
     {
-        $this->reponsitory = $productCategoryReponsitory;
+        $this->repository = $productCategoryRepository;
     }
 
 }

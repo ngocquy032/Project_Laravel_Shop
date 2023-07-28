@@ -901,8 +901,9 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="widget-content-right mr-2">
-                                                                    <button
-                                                                        class="btn-pill btn-shadow btn-shine btn btn-focus">Logout</button>
+                                                                    <a href="./admin/logout" class="btn-pill btn-shadow btn-shine btn btn-focus">Logout</a>
+
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1480,31 +1481,31 @@
                                 <ul>
                                     <li>
                                         <a href="./admin/user"
-                                            class="{{ request()->segment(2) == 'user' ? 'mm-active' : '' }}">
+                                            class="{{ (request()->segment(2) == 'user') ? 'mm-active' : '' }}">
                                             <i class="metismenu-icon"></i>User
                                         </a>
                                     </li>
                                     <li>
                                         <a href="./admin/order"
-                                            class="{{ request()->segment(2) == 'order' ? 'mm-active' : '' }}">
+                                            class="{{ (request()->segment(2) == 'order') ? 'mm-active' : '' }}">
                                             <i class="metismenu-icon"></i>Order
                                         </a>
                                     </li>
                                     <li>
                                         <a href="./admin/product"
-                                            class="{{ request()->segment(2) == 'product' ? 'mm-active' : '' }}">
+                                            class="{{ (request()->segment(2) == 'product') ? 'mm-active' : '' }}">
                                             <i class="metismenu-icon"></i>Product
                                         </a>
                                     </li>
                                     <li>
                                         <a href="./admin/category"
-                                            class="{{ request()->segment(2) == 'category' ? 'mm-active' : '' }}">
+                                            class="{{ (request()->segment(2) == 'category') ? 'mm-active' : '' }}">
                                             <i class="metismenu-icon"></i>Category
                                         </a>
                                     </li>
                                     <li>
                                         <a href="./admin/brand"
-                                            class="{{ request()->segment(2) == 'brand' ? 'mm-active' : '' }}">
+                                            class="{{ (request()->segment(2) == 'brand') ? 'mm-active' : '' }}">
                                             <i class="metismenu-icon"></i>Brand
                                         </a>
                                     </li>

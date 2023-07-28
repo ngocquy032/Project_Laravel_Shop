@@ -10,4 +10,6 @@ interface ServiceInterface
     public function update(array $data, $id);
     public function delete($id);
 
+    public function searchAndPaginate($searchBy, $keyword, $perPage = 5);
+
 }

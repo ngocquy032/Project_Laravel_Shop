@@ -28,4 +28,13 @@ class HomeController extends Controller
             return back()->with('notification', 'ERROR: Email or password is wrong');
         }
     }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('admin/login');
+    }
+
+    public function index(){
+        return view('admin.login');
+    }
 }

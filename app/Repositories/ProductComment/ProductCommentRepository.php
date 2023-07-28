@@ -6,7 +6,7 @@ use App\Models\ProductComment;
 use App\Repositories\BaseRepository;
 use App\Repositories\RepositoryInterface;
 
-class ProductCommentReponsitory extends BaseRepository implements ProductCommentRepositoryInterface
+class ProductCommentRepository extends BaseRepository implements ProductCommentRepositoryInterface
 {
 
     public function getModel()
